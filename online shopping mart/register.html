@@ -1,0 +1,65 @@
+<html>
+<head>
+	<script type="text/javascript">
+function validate()
+{
+	uname=document.getElementById("umame").value;
+	opwd=document.getElementById("opwd").value;	
+
+	npwd=document.getElementById("npwd").value;
+                 
+		
+		p=/[0-9]{16}/gi;
+		p1=/[0-9]/gi;
+		p2=/[aA-zZ]/gi;
+		p3=/[~!@#$%^&*()_+}{|":<>?,.;'=-]/gi;
+		p4=/[aA-zZ]@[.com.ac.org]]/gi;
+
+
+	
+	
+	if(uname.match(p1))	
+			alert("username should contain only alphabets");
+		else   if(uname.match(p3))
+			alert("username should not contain special characters");
+
+	
+			
+	
+	alert()
+}
+	</script>
+</head>
+<body>
+	<form action=""  name="Payment page" method="POST" onsubmit="validate()" >
+	<center>
+	<table border="|" width=50% height=50%>
+		<tr>
+			<td colspan="2"><center><h2><u>User Registration</u></h2><br><center></td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td><input type="text" name="uname" id="uname"></td>
+		</tr>
+		
+		<tr>
+			<td>Old Password</td>
+			<td><input type="text"   name="opwd" id="opwd"></td>
+		</tr>
+		
+		<tr>
+			<td>New Passsword</td>
+			<td><input type="text" name="npwd" id="npwd"></td>
+		</tr>
+		<tr>
+			<td><center><input type="submit" name="ok" value="ok" id="ok"><center></td>
+			<td><center><button><a href="New.html">Cancel</a></button><center></td>
+		</tr>
+
+
+	</table>
+	<center>
+	</form>
+
+</body>
+</html>

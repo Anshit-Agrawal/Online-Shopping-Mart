@@ -1,0 +1,93 @@
+<html>
+<head>
+	<script type="text/javascript">
+function validate()
+{
+	cardno=document.getElementById("cardno").value;
+	cname=document.getElementById("cname").value;	
+
+	cvv=document.getElementById("cvv").value;
+                  num=parseInt(cvv);
+
+	edate=document.getElementById("edate").value;
+alert(edate);
+	amount=document.getElementById("amount").value;
+		
+		p=/[0-9]{16}/gi;
+		p1=/[0-9]/gi;
+		p2=/[aA-zZ]/gi;
+		p3=/[~!@#$%^&*()_+}{|":<>?,.;'=-]/gi;
+		p4=/[aA-zZ]@[.com.ac.org]]/gi;
+
+	
+	 if(cardno.match(p) )
+		{
+		}
+	else 
+		alert("invalid  card no");
+	
+	
+	if(cname.match(p1))	
+			alert("cname should contain only alphabets");
+		else   if(cname.match(p3))
+			alert("cname should not contain special characters");
+
+	if(cvv.match(p2))
+			alert("cvv should contain only numbers ");
+		else if(cvv.length<3 || cvv.length>4)
+			alert("cvv length should be 3 or 4");
+	
+	
+	am=parseFloat(amount);
+	if(amount.match(p2) || amount.match(p3))
+                  			 alert("amount shoud contain only numbers:");	
+
+	date=new Date();
+	alert(date);
+	if(edate<date)
+		alert("invalid date");
+			
+	
+	alert()
+}
+	</script>
+</head>
+<body>
+	<form action=""  name="Payment page" method="POST" onsubmit="validate()" >
+	<center>
+	<table border="|" width=50% height=50% BACKGROUND="00.JPG">
+		<tr>
+			<td colspan="2"><center><h2><u>Payment Gateway</u></h2><br><center></td>
+		</tr>
+		<tr>
+			<td>Credit card number:</td>
+			<td><input type="text" name="cardno" placeholder="xxxx xxxx xxxx xxxx(16 digit)" id="cardno"></td>
+		</tr>
+		<tr>
+			<td>Customer name:</td>
+			<td><input type="text" name="cname" id="cname"></td>
+		</tr>
+		<tr>
+			<td>CVV number:</td>
+			<td><input type="password"  placeholder="e.g 984(3 digit)" name="cvv" id="cvv"></td>
+		</tr>
+		<tr>
+			<td>Expiry Date:</td>
+			<td><input type="date" name="edate" id="edate"></td>
+		</tr>
+		<tr>
+			<td>Amount:</td>
+			<td><input type="text" name="amount" id="amount"></td>
+		</tr>
+		<tr>
+			<td><center><input type="submit" name="pay" value="Pay" id="pay"><center></td>
+			<td><center><button><a href="home.html">Cancel</a></button><center></td>
+		</tr>
+
+
+	</table>
+	<center>
+	</form>
+
+</body>
+</html>
